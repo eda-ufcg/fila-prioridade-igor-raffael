@@ -16,4 +16,8 @@ public class Pair {
 	public int getPrioridade() {
 		return this.prioridade;
 	}
+
+  public String toString() {
+    return String.format("<%s, %d>", elemento, prioridade);
+  }
 }

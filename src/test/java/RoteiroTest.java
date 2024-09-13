@@ -1,10 +1,40 @@
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
-import java.util.Arrays;
+import org.junit.jupiter.api.*;
+import java.util.*;
 
 public class RoteiroTest {
+
+  private Heap heap;
+
+  @BeforeEach
+  public void setUp() {
+    heap = new Heap(5);
+  }
+
+  @Test
+  public void testHeap() {
+    assertTrue(heap.isEmpty());
+
+    Pair p1 = new Pair("a", 10);
+    heap.add(p1);
+    assertTrue(heap.size() == 1);
+
+    Pair p2 = new Pair("b", 8);
+    heap.add(p2);
+    assertTrue(heap.size() == 2);
     
-    @Test
+    Pair p3 = new Pair("c", 6);
+    heap.add(p3);
+    assertTrue(heap.size() == 3);
+
+    assertTrue("[<a, 10>, <b, 8>, <c, 6>]".equals(heap.toString()));
+
+    heap.remove();
+
+    assertTrue("[<b, 8>, <c, 6>]".equals(heap.toString()));
+  }
+
+  @Test
 	public void test() {
 		FilaPrioridade heap = new HeapFilaPrioridade(5);
 		FilaPrioridade insereFinal = new InsereFinalFilaPrioridade(5);
@@ -73,7 +103,6 @@ public class RoteiroTest {
 			assertEquals(fila.removeNext(), "e");
 		}
 
-
 		// 7, 2, 1, 9, -1 (valores de prioridade iguais segue fifo)
 		for (FilaPrioridade fila : estrategias) {
 			fila.add("a", 7);
@@ -102,7 +131,5 @@ public class RoteiroTest {
 		for (FilaPrioridade fila : estrategias) {
 			assertEquals(fila.removeNext(), "e");
 		}
-
 	}
-
 }
