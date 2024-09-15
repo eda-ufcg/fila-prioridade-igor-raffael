@@ -1,8 +1,8 @@
 # Identificação
 
-* Nome: 
-* Email (@ccc): 
-* Matrícula: 
+* Nome: Igor Raffael Menezes de Melo
+* Email (@ccc): igor.raffael.menezes.melo@ccc.ufcg.edu.br
+* Matrícula: 123110549
 
 # Roteiro: Fila de Prioridade
 
